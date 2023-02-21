@@ -1,0 +1,207 @@
+﻿@{
+    ViewData["Title"] = "Scheme Defination";
+}
+
+<style>
+    #feedback {
+        font-size: 1.4em;
+    }
+
+    #selectable .ui-selecting {
+        background: #FECA40;
+    }
+
+    #selectable .ui-selected {
+        background: #F39814;
+        color: white;
+    }
+
+    #selectable {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 60%;
+    }
+
+        #selectable li {
+            margin: 3px;
+            padding: 0.4em;
+            font-size: 1.4em;
+            height: 18px;
+        }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script src="~/js/downloadexceltemplete.js"></script>
+<script src="~/js/DropdownChange.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.13.2/datatables.min.js"></script>
+<script>
+    $(document).ready(function () {
+            $('#ViewUpload').click(function (){
+            $('#Example').dataTable({
+                "processing": true,
+                "serverSide": false,
+                "filter": true,
+                "orderMulti": true,
+                "ajax": {
+                    "url": "/SchemeDefination/GetRawData",
+                    "type": "POST",
+                    "datatype": "json"
+                },
+                "columns": [
+                    { "data": "Business", "autowidth": true }
+
+                ]
+
+            })
+        });
+});
+</script>
+<script>
+    $(function () {
+        $("#selectable").selectable();
+    });
+</script>
+
+<div ng-view="" class="ng-scope" style="">
+    <div class="wrapper ng-scope">
+        <div class="refresh" style="display: none;"></div>
+        <div class="row page-header ng-scope" ng-if="orderViewTab.tab == 1" style="">
+            <div class="col-5">
+                <div class="backtoScheme">
+                    <a class="fa fa-arrow-left pl-4" style="text-decoration:none;" aria-hidden="true" href="@Url.Action("Index", "Home")"> Go Back</a>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="">
+                </div>
+            </div>
+        </div>
+        <div class="row ng-scope" style="">
+            <div class="col-3" style="padding: 5px">
+                <div class="card" style="text-align: center">
+                    <div class="card-body" style="padding: 15px">
+                        <h6 style="color:#007bff ;">
+                            <p style="display: inline-block;border-radius: 60px;box-shadow: 0px 0px 2px #888;padding: 0.4em 0.4em ;color:#007bff ;border-color:#007bff ">1</p>
+                            &nbsp; Select Business
+                        </h6>
+                        <div ng-repeat="item in matressName | unique: &#39;l5&#39; | filter : itemSearch.item" style="text-align: center;" class="ng-scope">
+                            <p style="margin: 0px" class="ng-binding" role="button" tabindex="0">
+                                <select class="form-control ng-pristine ng-untouched ng-valid" onchange="Dropdown_change()" id="Business" ng-model="BussinessName" tabindex="0" aria-invalid="false">
+                                    <option value="" selected="selected" class="">Select Business</option>
+                                    <option value="string:B2B" label="B2B">B2B</option>
+                                    <option value="string:B2C" label="B2C">B2C</option>
+                                </select>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 ng-scope" style="padding: 5px;" ng-if="matressGrades.length">
+                <div class="card" style="text-align: center">
+                    <div class="card-body" style="padding: 15px">
+                        <h6 style="color:#007bff ;text-align: center">
+                            <p style="display: inline-block;border-radius: 60px;box-shadow: 0px 0px 2px #888;padding: 0.4em 0.4em ;color:#007bff ;border-color:#007bff ">2</p>
+                            &nbsp; Select Scheme Type
+                        </h6>
+                        <div ng-repeat="item in matressGrades | unique: &#39;grade&#39; | filter : itemSearch.grade" class="ng-scope">
+                            <p style="margin: 0px" ng-click="selectedGrade(item.grade)" class="ng-binding" role="button" tabindex="0">
+                                <select class="form-control ng-pristine ng-untouched ng-valid" id="Scheme" ng-model="SchemeType" ng-options="fulfillmentStatus for fulfillmentStatus in fulfillmentstatus" tabindex="0" aria-invalid="false">
+                                    <option value="" selected="selected" class="">Select Scheme Type</option>
+                                    <option value="string:Value" label="Value">Value</option>
+                                    <option value="string:Volume" label="Volume">Volume</option>
+                                </select>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 ng-scope" style="padding: 5px;" ng-if="matressDensity.length">
+                <div class="card" style="text-align: center ">
+                    <div class="card-body" style="padding: 15px">
+                        <h6 style="color:#007bff;">
+                            <p style="display: inline-block;border-radius: 60px;box-shadow: 0px 0px 2px #888;padding: 0.4em 0.4em ;color:#007bff ;border-color:#007bff ">3</p>
+                            &nbsp; Select Channel
+                        </h6>
+                        <div ng-repeat="item in matressDensity | unique: &#39;density&#39; | filter : itemSearch.density" class="ng-scope">
+                            <p style="margin: 0px" ng-click="selectedDensity(item)" class="ng-binding" role="button" tabindex="0">
+                                <select class="form-control ng-pristine ng-untouched ng-valid" id="Channel" ng-model="ChannelName" ng-options="fulfillmentStatus for fulfillmentStatus in fulfillmentstatus" tabindex="0" aria-invalid="false">
+                                    <option value="" selected="selected" class="">Select Channel</option>
+                                    <option value="string:Customer" label="Customer">Customer</option>
+                                    <option value="string:Distributor/Dealer" label="Distributor/Dealer">Distributor/Dealer</option>
+                                    <option value="string:Dealer/Indirect Dealer" label="Dealer/Indirect Dealer">Dealer/Indirect Dealer</option>
+                                </select>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 ng-scope" style="padding: 5px;" ng-if="matressDensity.length">
+                <div class="card" style="text-align: center ">
+                    <div class="card-body" style="padding: 15px">
+                        <h6 style="color:#007bff;">
+                            &nbsp; Date
+                        </h6>
+                        <br />
+                        <p id="myId"></p>
+                        <script>
+                            var date = new Date();
+                            var dd = date.getDate();
+                            var mm = date.getMonth()+01;
+                            var yyyy = date.getFullYear();
+                            var newDate = dd + "-" +"0"+mm + "-" + yyyy;
+                            var p = document.getElementById("myId");
+                            p.innerHTML = newDate;
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row ng-scope" ng-if="orderViewTab.tab == 1 &amp;&amp; customer.Dealercode" style="">
+        <div class="col-9 ng-scope" style="padding: 5px;" ng-if="matressDensity.length">
+            <div class="card" style="text-align: center ">
+                <div class="card-body" style="padding: 15px">
+                    <div class="input-group">
+                        @using (Html.BeginForm("SchemeCreation", "SchemeDefination", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            <input type="file" ng-model="fileupload" name="postedFile">
+                            <button ng-model="UploadButton" class="btn btn-primary">Upload Templete</button>
+                            
+                        }
+                        &nbsp;<button type="button" id="ViewUpload" class="btn btn-danger">View Upload Data</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 ng-scope" style="padding: 5px;">
+            <div class="card" style="text-align: center ">
+                <div class="card-body" style="padding: 15px">
+                    <div class="input-group">
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary" ng-model="ExportButton" onclick="downloadExcel()">Export Template </button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row ng-scope" ng-if="orderViewTab.tab == 1 &amp;&amp; customer.Dealercode" style="">
+        <div class="col-12 ng-scope" style="padding: 5px;" ng-if="matressDensity.length">
+            <div class="card" style="text-align: center ">
+                <div class="card-body" style="padding: 15px">
+                    <div class="input-group">
+                        <table id="Example">
+                            <thead>
+                                <tr>
+                                    <td>Scheme Name</td>
+                                </tr>
+                            </thead>
+                        </table> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

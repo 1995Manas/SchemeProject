@@ -1,0 +1,229 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Angular.Material" Version="1.1.12" />
+		<PackageReference Include="angularjs" Version="1.8.2" />
+		<PackageReference Include="AngularJS.Core" Version="1.8.2" />
+		<PackageReference Include="bootstrap" Version="5.2.3" />
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.11" />
+		<PackageReference Include="System.Data.OleDb" Version="4.7.1" />
+		<PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="ApiController\" />
+		<Folder Include="Controllers\AjaxapiController\" />
+		<Folder Include="wwwroot\fonts\" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AngularJS_Call_Controller_MVC">
+      <HintPath>bin\AngularJS_Call_Controller_MVC.dll</HintPath>
+    </Reference>
+    <Reference Include="dotnet-aspnet-codegenerator-design">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\dotnet-aspnet-codegenerator-design.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>bin\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Humanizer">
+      <HintPath>bin\Debug\net6.0\Humanizer.dll</HintPath>
+    </Reference>
+    <Reference Include="MessagePack">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\MessagePack.dll</HintPath>
+    </Reference>
+    <Reference Include="MessagePack.Annotations">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\MessagePack.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data">
+      <HintPath>bin\Debug\net6.0\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Razor.Language">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.Build.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Framework">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.Build.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.AnalyzerUtilities">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Features">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.Features.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Scripting">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Features">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.CodeAnalysis.Features.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Razor">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.CodeAnalysis.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Scripting">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.CodeAnalysis.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.VisualBasic">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.CodeAnalysis.VisualBasic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.VisualBasic.Features">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.CodeAnalysis.VisualBasic.Features.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.VisualBasic.Workspaces">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DiaSymReader">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.DiaSymReader.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DotNet.Scaffolding.Shared">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.DotNet.Scaffolding.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.NET.StringTools">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.NET.StringTools.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Debugger.Contracts">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.VisualStudio.Debugger.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Web.CodeGeneration">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Web.CodeGeneration.Core">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Web.CodeGeneration.Templating">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Web.CodeGeneration.Utils">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Web.CodeGenerators.Mvc">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.SystemEvents">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Common">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\NuGet.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Configuration">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\NuGet.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.DependencyResolver.Core">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\NuGet.DependencyResolver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Frameworks">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\NuGet.Frameworks.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.LibraryModel">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\NuGet.LibraryModel.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Packaging">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\NuGet.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.ProjectModel">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\NuGet.ProjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Protocol">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\NuGet.Protocol.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Versioning">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\NuGet.Versioning.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.AttributedModel">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\System.Composition.AttributedModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Convention">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\System.Composition.Convention.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Hosting">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\System.Composition.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Runtime">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\System.Composition.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.TypedParts">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\System.Composition.TypedParts.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.ConfigurationManager">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlClient">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Common">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>bin\Debug\net6.0\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.MetadataLoadContext">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.ProtectedData">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>bin\Debug\net6.0\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>bin\Debug\net6.0\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>bin\Debug\net6.0\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor">
+      <HintPath>bin\Debug\net6.0\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <HintPath>bin\Debug\net6.0\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment">
+      <HintPath>bin\Debug\net6.0\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor">
+      <HintPath>bin\Debug\net6.0\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Extensions">
+      <HintPath>..\..\..\DFXScheme\DFXScheme\bin\Debug\net6.0\System.Windows.Extensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
